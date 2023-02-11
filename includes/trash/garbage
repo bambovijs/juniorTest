@@ -1,0 +1,15 @@
+        <?php
+        $p1 = new Dvd(12, 22, "Product1", 23.44, 700);
+        $p2 = new Book(14, 25, "Product2", 110.21, 1200);
+        $p3 = new Furniture(11, 29, "Product3", 1.30, array(123, 333, 222));
+
+        echo "". $p1->getProductId() . " " . $p1->getSku() . " " . $p1->getName() . " " . $p1->getPrice() . " " . $p1->getAttributes() . "<br> ";
+        echo "". $p2->getProductId() . " " . $p2->getSku() . " " . $p2->getName() . " " . $p2->getPrice() . " " . $p2->getAttributes() . "<br> ";
+        
+        echo "Product ID: " . $p3->getProductId() . "<br>";
+        echo "SKU: " . $p3->getSku() . "<br>";
+        echo "Name: " . $p3->getName() . "<br>";
+        echo "Price: " . $p3->getPrice() . "<br>";
+        echo "Attributes: " . implode(',', $p3->getAttributes()) . "<br>";
+
+        ?>

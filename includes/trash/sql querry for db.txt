@@ -1,0 +1,29 @@
+CREATE TABLE Product (
+  product_id INT AUTO_INCREMENT PRIMARY KEY,
+  sku VARCHAR(255) UNIQUE NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  price DECIMAL(10,2) NOT NULL
+);
+
+CREATE TABLE Book (
+  book_id INT AUTO_INCREMENT PRIMARY KEY,
+  product_id INT NOT NULL,
+  weight DECIMAL(10,2) NOT NULL,
+  FOREIGN KEY (product_id) REFERENCES Product(product_id)
+);
+
+CREATE TABLE DVD (
+  dvd_id INT AUTO_INCREMENT PRIMARY KEY,
+  product_id INT NOT NULL,
+  size DECIMAL(10,2) NOT NULL,
+  FOREIGN KEY (product_id) REFERENCES Product(product_id)
+);
+
+CREATE TABLE Furniture (
+  furniture_id INT AUTO_INCREMENT PRIMARY KEY,
+  product_id INT NOT NULL,
+  height DECIMAL(10,2) NOT NULL,
+  width DECIMAL(10,2) NOT NULL,
+  length DECIMAL(10,2) NOT NULL,
+  FOREIGN KEY (product_id) REFERENCES Product(product_id)
+);
